@@ -30,18 +30,19 @@ async function generatePDF() {
     // 페이지 스타일이 완전히 로드될 때까지 대기
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // PDF 생성 (output 폴더에 저장, A3 사이즈, 여백 포함)
+    // PDF 생성 (output 폴더에 저장, 커스텀 사이즈 (가로 A3, 세로 A4), 여백 포함)
     const projectRoot = join(__dirname, "..");
     const outputPath = join(projectRoot, "output", "resume.pdf");
     await page.pdf({
       path: outputPath,
-      format: "A3",
+      width: "297mm", // A3 가로
+      height: "300mm", // A4 세로
       printBackground: true,
       margin: {
         top: "20mm",
-        right: "20mm",
-        bottom: "20mm",
-        left: "20mm",
+        right: "15mm",
+        bottom: "0mm",
+        left: "15mm",
       },
     });
 
