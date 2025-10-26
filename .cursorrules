@@ -1,0 +1,76 @@
+# Cursor Rules for Portfolio Project
+
+## Git Commit Guidelines
+
+### Commit Message Format
+- **언어**: 모든 커밋 메시지는 한국어로 작성
+- **형식**: `타입: 간단한 설명`
+
+### Commit Types
+- `추가`: 새로운 기능이나 파일 추가
+- `수정`: 기존 기능 수정
+- `삭제`: 파일이나 기능 삭제
+- `버그`: 버그 수정
+- `리팩토링`: 코드 리팩토링
+- `스타일`: 코드 포맷팅, 세미콜론 누락 등
+- `문서`: 문서 수정
+- `테스트`: 테스트 코드 추가/수정
+- `설정`: 설정 파일 수정
+- `배포`: 배포 관련 수정
+
+### Examples
+```
+추가: 아카이브 페이지 구현
+수정: 네비게이션 스타일 개선
+버그: 이미지 로딩 에러 수정
+리팩토링: 서버 컴포넌트로 분리
+설정: Next.js 15로 업그레이드
+```
+
+### Detailed Commit Message (Optional)
+커밋 메시지 본문이 필요한 경우:
+```
+추가: 프로젝트 아카이브 기능
+
+- archive.json 기반 SSR 구현
+- 프로젝트 카드 컴포넌트 생성
+- 반응형 그리드 레이아웃 적용
+```
+
+## Code Style
+
+### TypeScript
+- 항상 타입을 명시적으로 선언
+- interface 우선 사용 (type은 필요시에만)
+- async/await 사용
+
+### React/Next.js
+- 서버 컴포넌트를 기본으로 사용
+- 클라이언트 컴포넌트는 필요한 경우에만 ("use client")
+- metadata는 Metadata 타입 사용
+
+### Import Order
+1. React/Next.js imports
+2. Third-party libraries
+3. Internal types
+4. Internal components
+5. Styles
+
+### File Naming
+- 컴포넌트: PascalCase (e.g., `ProjectImage.tsx`)
+- 페이지: lowercase (e.g., `page.tsx`)
+- 유틸: camelCase (e.g., `utils.ts`)
+- 타입: lowercase (e.g., `project.ts`)
+
+## Project Specific
+
+### Data Management
+- `data/archive.json`을 DB로 사용
+- 서버 컴포넌트에서 직접 파일 읽기
+- TypeScript 타입으로 데이터 구조 보장
+
+### Performance
+- 이미지 최적화 고려
+- 불필요한 클라이언트 컴포넌트 지양
+- SSR 활용
+

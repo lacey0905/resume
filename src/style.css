@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  background-color: #374151;
+  line-height: 1.65;
+  min-width: 1123px;
+  color: #1a1a1a;
+}
+
+.container {
+  /* A3 사이즈 기준: 297mm (1123px @ 96dpi) */
+  width: 1123px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 80px 65px 65px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  gap: 50px;
+}
+
+.header-left {
+  flex: 2;
+  min-width: 0;
+}
+
+.name {
+  font-size: 56px;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin-bottom: 15px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.name-en {
+  font-size: 28px;
+  font-weight: 500;
+  color: #1d4ed8;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #4a4a4a;
+  max-width: 450px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.header-right {
+  flex: 1;
+  min-width: 0;
+  margin-top: 34px;
+  text-align: left;
+  font-size: 15px;
+  color: #4a4a4a;
+  line-height: 1.5;
+}
+
+.header-right p {
+  margin-bottom: 2px;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  gap: 50px;
+}
+
+.left-column {
+  flex: 2;
+  min-width: 0;
+}
+
+.right-column {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin-bottom: 18px;
+  margin-top: 24px;
+  letter-spacing: -0.02em;
+}
+
+section:first-child .section-title {
+  margin-top: 0;
+}
+
+/* Job Entries */
+.job {
+  margin-bottom: 28px;
+}
+
+.job-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.job-title {
+  font-size: 17px;
+  color: #2a2a2a;
+  font-weight: 500;
+}
+
+.job-title strong {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.job-date {
+  font-size: 14px;
+  color: #666;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.job-position {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.job-date-inline {
+  font-size: 14px;
+  color: #777;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.job-description {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.job-description li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+.job-sub-description {
+  margin-top: 8px;
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+.job-sub-description li {
+  margin-bottom: 6px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+/* Right Column */
+.subsection-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 18px;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+section:first-child .subsection-title:first-of-type {
+  margin-top: 0;
+}
+
+.skill-text {
+  font-size: 13px;
+  color: #2a2a2a;
+  line-height: 1.6;
+}
+
+/* Projects */
+.project {
+  margin-bottom: 20px;
+}
+
+.project-description {
+  font-size: 14px;
+  color: #2a2a2a;
+  line-height: 1.6;
+}
+
+/* Education */
+.education-text {
+  font-size: 14px;
+  color: #2a2a2a;
+  line-height: 1.6;
+  margin-bottom: 2px;
+}
+
+/* Interests */
+.interests-text {
+  font-size: 14px;
+  color: #2a2a2a;
+  line-height: 1.6;
+}
+
+/* A3 고정 사이즈 유지 - 반응형 비활성화 */
+
+@media print {
+  body {
+    background-color: white;
+  }
+
+  .container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  /* PDF 생성 시 2단 레이아웃 강제 유지 */
+  .main-content {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 50px !important;
+  }
+
+  .left-column {
+    flex: 2 !important;
+    min-width: 0 !important;
+  }
+
+  .right-column {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .header {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 50px !important;
+  }
+
+  .header-left {
+    flex: 2 !important;
+    min-width: 0 !important;
+  }
+
+  .header-right {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+}
